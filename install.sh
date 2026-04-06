@@ -38,7 +38,7 @@ fi
 # Switch default shell to bash if not already
 if [ "$SHELL" != "$(which bash)" ]; then
   echo "Switching default shell to bash..."
-  chsh -s "$(which bash)"
+  sudo chsh -s "$(which bash)" "$USER"
 fi
 
 # nvim
