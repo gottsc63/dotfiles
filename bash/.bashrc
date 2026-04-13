@@ -1,6 +1,9 @@
 # If not running interactively, don't do anything (leave this at the top of this file)
 [[ $- != *i* ]] && return
 
+# Ghostty terminfo fallback for remote systems that don't have it
+[[ "$TERM" == "xterm-ghostty" ]] && ! infocmp xterm-ghostty &>/dev/null 2>&1 && export TERM=xterm-256color
+
 # All the default Omarchy aliases and functions
 # (don't mess with these directly, just overwrite them here!)
 [[ -f ~/.local/share/omarchy/default/bash/rc ]] && source ~/.local/share/omarchy/default/bash/rc
